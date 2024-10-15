@@ -5,7 +5,7 @@ interface CreateNutritionRequest {
   name: string
   weight: string
   height: string
-  age: number
+  age: string
   gender: string
   objective: string
   level: string
@@ -41,14 +41,13 @@ export async function createNutrition({
     - altura: a altura da pessoa
     - peso: o peso da pessoa
     - objetivo: o objetivo atual
-    - refeições: uma array contendo objetos para cada refeição, com as propriedades:
-        - horário: o horário da refeição
+    - refeicoes: uma array contendo objetos para cada refeição, com as propriedades:
+        - horario: o horário da refeição
         - nome: o nome da refeição
-        - alimentos: array com os alimentos recomendados para a refeição
-    - suplementos: array com sugestão de suplementos para o sexo e objetivo da pessoa
+        - alimentos: array com os alimentos recomendados para a refeição, refeições estas: "Café da manhã", "Lanche da manhã", "Almoço", "Lanche da tarde" e "Jantar"
+    - suplementos: array com sugestão de suplementos e quantidades para o sexo e objetivo da pessoa
 
-    Não inclua observações extras. 
-    Não utilize acentos em nenhuma propriedade.
+    Não inclua observações extras. Use a tabela de referência para calcular as necessidades nutricionais.
   `.trim()
 
     const response = await model.generateContent(prompt)

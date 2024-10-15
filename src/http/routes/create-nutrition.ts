@@ -11,7 +11,7 @@ export const createNutritionRoute: FastifyPluginAsyncZod = async app => {
           name: z.string(),
           weight: z.string(),
           height: z.string(),
-          age: z.number(),
+          age: z.string(),
           gender: z.string(),
           objective: z.string(),
           level: z.string()
